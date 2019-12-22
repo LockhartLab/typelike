@@ -1,0 +1,25 @@
+
+language: python
+python: 3.7
+
+# run all typelike tests
+script:
+  - cp typelike/tests/test.py .
+  - python -m coverage run test.py
+  - rm test.py
+
+# after a successful test, upload to codecov.io
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+# deploy to pypi
+deploy:
+  - provider: pypi
+    user: "__token__"
+    password:
+      secure: Cmy77lJc1w6iiYzSJTEyJmuAvY482dHr3Jl9ZuR1AP73h27v30vpjLN23Kj7GnJV8r4C+RsbkWLrWvYCDYKUjGJBCghU12CQO+c7JVpdUqXJES+9ms84pnJxC/qYfAe6+2bbNRq59wjZXYFbt2LyVT0EQKe1utcGWFS/9TiTr7S1XsoI1vzFHLaqlFH2MfB6E/uajwhhYVJUwVQSTtfzqSEeXft6+GdPZFEoA77B+dgTlEAcH4GztKihTgtgXA9XvXj2PUrMFWIv3MKvGnY4taEq4c5aqZkPgutsgzdSN0Qp4sAeFbA2mZDmJK61ao8ArassOBJf0a/XB2G/TlY8SFuTU7mOCYLmMsSQGBBLIez4yoNhb1SDDiGoMrT4l2YJ2ZdwFdE471dZXODEGgKYRhKveXmklaho2zuXv5ZdB912eAzHQ9PTt3xcMIJ/j1hB68Y0AeOCStAcogX2ZLEHgOxTHziDVL0hiXC1j5/CUcjINZOwCjGto4x9BgMo9CFOR9IL533+IM4HAEKKF+Ca2ZT/akG0P3vEVkV4u+2NkyDn2jQc6a0TFnphB8z362oKZXHAOZsNkovKPMfVZ23XoECWg2Qh5Y+C9dWjSJ1JhqT/3/pbY75yBUfA9YkFzjLXlc2bNOomT2cN28S6QgHPZF6tvKHUPpWWHZ+LDkBsYFw=
+    twine_check: true
+    skip_cleanup: true
+    on:
+      tags: true
+
