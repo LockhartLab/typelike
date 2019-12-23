@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>typelike.core.list &#8212; typelike 0.0.3 documentation</title>
+    <title>typelike.core.list &#8212; typelike 0.0.4 documentation</title>
     <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -21,7 +21,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">typelike 0.0.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">typelike 0.0.4 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li> 
       </ul>
     </div>  
@@ -38,6 +38,8 @@
 <span class="sd">author: C. Lockhart &lt;chris@lockhartlab.org&gt;</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
+<span class="kn">from</span> <span class="nn">.any</span> <span class="kn">import</span> <span class="n">AnyLike</span>
+
 <span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -49,7 +51,7 @@
 
 
 <span class="c1"># ListLike class</span>
-<div class="viewcode-block" id="ListLike"><a class="viewcode-back" href="../../../api/generated/typelike.core.ListLike.html#typelike.core.ListLike">[docs]</a><span class="k">class</span> <span class="nc">ListLike</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+<div class="viewcode-block" id="ListLike"><a class="viewcode-back" href="../../../api/generated/typelike.core.ListLike.html#typelike.core.ListLike">[docs]</a><span class="k">class</span> <span class="nc">ListLike</span><span class="p">(</span><span class="n">AnyLike</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Something that is ``ListLike`` is something that can be coerced into a 1-dimensional list. This includes lists,</span>
 <span class="sd">    sets, tuples, numpy.ndarray, and pandas.Series.</span>
@@ -58,35 +60,10 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># Needed to trick PyCharm</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="c1"># noinspection PyMissingConstructor</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="c1"># Needed to trick PyCharm</span>
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
-
-    <span class="c1"># Needed to trick PyCharm</span>
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
-
-    <span class="c1"># Needed to trick PyCharm</span>
-    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
-
-    <span class="c1"># Register subclass as ArrayLike</span>
-<div class="viewcode-block" id="ListLike.register"><a class="viewcode-back" href="../../../api/generated/typelike.core.ListLike.html#typelike.core.ListLike.register">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">subclass</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Registers a new subclass as ``ListLike``</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        subclass : class</span>
-<span class="sd">            Subclass to register as ``ListLike``</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="c1"># noinspection PyCallByClass</span>
-        <span class="n">ABCMeta</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">subclass</span><span class="p">)</span></div></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
 
 <span class="c1"># Register subclasses</span>
@@ -95,6 +72,8 @@
 <span class="n">ListLike</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="nb">tuple</span><span class="p">)</span>
 <span class="n">ListLike</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span>  <span class="c1"># TODO is there a way to specify only 1D numpy arrays?</span>
 <span class="n">ListLike</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span>
+
+<span class="n">AnyLike</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">ListLike</span><span class="p">)</span>
 </pre></div>
 
           </div>
@@ -122,7 +101,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">typelike 0.0.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">typelike 0.0.4 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li> 
       </ul>
     </div>
