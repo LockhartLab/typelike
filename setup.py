@@ -31,6 +31,7 @@ setup(
     url="https://www.lockhartlab.org",
     packages=[
         'typelike',
+        'typelike.core',
     ],
     install_requires=[
         'numpy',
