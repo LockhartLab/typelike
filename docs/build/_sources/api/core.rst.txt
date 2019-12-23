@@ -9,4 +9,7 @@ Classes
 .. autosummary::
    :toctree: generated
 
+   AnyLike
+   Anything
    ListLike
+   NumberLike
