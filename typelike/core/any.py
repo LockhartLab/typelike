@@ -8,7 +8,8 @@ from abc import ABCMeta
 
 # Contents
 __all__ = [
-    'AnyLike'
+    'AnyLike',
+    'Anything'
 ]
 
 
@@ -54,3 +55,6 @@ class AnyLike(metaclass=ABCMeta):
 
 # Register subclasses
 # AnyLike.register()
+
+# Since `AnyLike` doesn't really make sense, let's alias this as `Anything`
+Anything = AnyLike

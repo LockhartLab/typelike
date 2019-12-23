@@ -9,6 +9,7 @@ from .version import __version__
 # __all__ += core.__all__
 __all__ = [
     'AnyLike',
+    'Anything',
     'ListLike',
     'NumberLike',
     '__version__'

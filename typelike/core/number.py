@@ -16,7 +16,6 @@ __all__ = [
 
 
 # NumberLike class
-# noinspection DuplicatedCode
 class NumberLike(AnyLike, metaclass=ABCMeta):
     """
     Something that is ``NumberLike`` is something that is singular and numerical
@@ -24,7 +23,7 @@ class NumberLike(AnyLike, metaclass=ABCMeta):
     Note: this class is not implemented. Don't create an instance, because it doesn't do anything.
     """
 
-    # Needed to trick PyCharm
+    # Needed to trick PyCHarm
     # noinspection PyMissingConstructor
     def __init__(self):
         raise NotImplementedError
@@ -37,5 +36,3 @@ NumberLike.register(bool)
 NumberLike.register(np.int)
 NumberLike.register(np.float)
 NumberLike.register(np.bool)
-
-AnyLike.register(NumberLike)
