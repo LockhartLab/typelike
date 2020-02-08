@@ -6,6 +6,11 @@ author: C. Lockhart <chris@lockhartlab.org>
 
 from abc import ABCMeta
 
+__all__ = [
+    'AnyLike',
+    'Anything'
+]
+
 
 # AnyLike class
 class AnyLike(metaclass=ABCMeta):

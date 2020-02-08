@@ -9,11 +9,6 @@ from .any import AnyLike
 from abc import ABCMeta
 import pandas as pd
 
-# Contents
-__all__ = [
-    'Pandas'
-]
-
 
 # Pandas class
 class Pandas(AnyLike, metaclass=ABCMeta):

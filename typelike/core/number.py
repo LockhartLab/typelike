@@ -9,11 +9,6 @@ from .any import AnyLike
 from abc import ABCMeta
 import numpy as np
 
-# Contents
-__all__ = [
-    'NumberLike'
-]
-
 
 # NumberLike class
 class NumberLike(AnyLike, metaclass=ABCMeta):

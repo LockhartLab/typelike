@@ -7,6 +7,10 @@ author: C. Lockhart <chris@lockhartlab.org>
 import numpy as np
 import pandas as pd
 
+__all__ = [
+    'typelike'
+]
+
 
 # A list of types
 dtypes = {
