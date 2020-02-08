@@ -7,10 +7,6 @@ author: C. Lockhart <chris@lockhartlab.org>
 import numpy as np
 import pandas as pd
 
-__all__ = [
-    'typelike'
-]
-
 
 # A list of types
 dtypes = {
@@ -25,6 +21,14 @@ dtypes = {
     'series': pd.Series,
     'dataframe': pd.DataFrame
 }
+
+
+class _Undefined:
+    def __init__(self):
+        pass
+
+
+Undefined = _Undefined()
 
 
 def typelike(anything):

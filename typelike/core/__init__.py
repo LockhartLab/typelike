@@ -9,5 +9,6 @@ __all__ = [
     'Anything',
     'ListLike',
     'NumberLike',
-    'typelike'
+    'typelike',
+    'Undefined'
 ]

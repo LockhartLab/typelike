@@ -13,5 +13,6 @@ __all__ = [
     'ListLike',
     'NumberLike',
     'typelike',
+    'Undefined',
     '__version__'
 ]
