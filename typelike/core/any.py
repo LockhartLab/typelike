@@ -6,12 +6,6 @@ author: C. Lockhart <chris@lockhartlab.org>
 
 from abc import ABCMeta
 
-# Contents
-__all__ = [
-    'AnyLike',
-    'Anything'
-]
-
 
 # AnyLike class
 class AnyLike(metaclass=ABCMeta):
