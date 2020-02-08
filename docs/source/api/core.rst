@@ -13,3 +13,4 @@ Classes
    Anything
    ListLike
    NumberLike
+   typelike
