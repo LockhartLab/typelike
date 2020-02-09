@@ -43,15 +43,16 @@ def infer_type(anything, itemize=True):
     """
 
     # By default, set the type to the type of anything
+    # TODO is there a better way to do this?
     dtype = type(anything)
+
+    # We need to correct dtype if it's a type object
+    if dtype is type:
+        dtype = anything
 
     # If anything is a string, try to parse
     if isinstance(anything, str):
         dtype = dtypes.get(anything.lower(), dtype)
-
-    # We need to correct the dtype if it's an instance of a type object, which means anything is already an object
-    if isinstance(dtype, type):
-        dtype = anything
 
     # If anything is a tuple or list, parse each element individually
     elif itemize and isinstance(anything, (list, tuple)):

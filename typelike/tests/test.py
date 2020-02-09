@@ -4,11 +4,13 @@ written in Python3
 author: C. Lockhart <chris@lockhartlab.org>
 """
 
-from typelike.tests import TestList
+from typelike.tests import TestInferTypes, TestList
 import unittest
 import sys
 
+# Test cases
 test_cases = [
+    TestInferTypes,
     TestList
 ]
 
