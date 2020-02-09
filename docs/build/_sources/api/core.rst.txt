@@ -13,4 +13,11 @@ Classes
    Anything
    ListLike
    NumberLike
-   typelike
+
+Functions
+~~~~~~~~~
+
+.. autosummary::
+   :toctree: generated
+
+   infer_type
