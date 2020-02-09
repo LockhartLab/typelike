@@ -49,6 +49,10 @@ def infer_type(anything, itemize=True):
     if isinstance(anything, str):
         dtype = dtypes.get(anything.lower(), dtype)
 
+    # We need to correct the dtype if it's an instance of a type object, which means anything is already an object
+    if isinstance(dtype, type):
+        dtype = anything
+
     # If anything is a tuple or list, parse each element individually
     elif itemize and isinstance(anything, (list, tuple)):
         dtype = []
