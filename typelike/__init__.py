@@ -10,9 +10,10 @@ from .version import __version__
 __all__ = [
     'AnyLike',
     'Anything',
+    'infer_type',
     'ListLike',
+    'NoneType',
     'NumberLike',
-    'typelike',
     'Undefined',
     '__version__'
 ]
