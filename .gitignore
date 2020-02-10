@@ -1,6 +1,7 @@
+/_scripts/
 /build/
 /dist/
 /.idea/
 /typelike.egg-info/
-__pycache__/
-__pycache__/*
+/__pycache__/
+/__pycache__/*
