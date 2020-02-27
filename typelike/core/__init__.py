@@ -11,6 +11,7 @@ __all__ = [
     'infer_type',
     'ListLike',
     'NoneType',
+    'nones',
     'NumberLike',
     'Undefined'
 ]
