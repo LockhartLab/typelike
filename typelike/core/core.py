@@ -55,8 +55,8 @@ def infer_type(anything, itemize=True):
         dtype = dtypes.get(anything.lower(), dtype)
 
     # If anything is None, dtype is None
-    elif anything is None:
-        dtype = None
+    # elif anything is None:
+    #     dtype = None
 
     # If anything is a tuple or list, parse each element individually
     elif itemize and isinstance(anything, (list, tuple)):
