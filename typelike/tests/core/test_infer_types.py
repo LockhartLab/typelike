@@ -19,7 +19,7 @@ class TestClass:
 
 # Test typelike/core/core.py
 class TestInferTypes(unittest.TestCase):
-    @given(st.one_of(st.integers(), st.floats(), st.booleans(), st.text()))
+    @given(st.one_of(st.integers(), st.floats(), st.booleans(), st.text(), st.none()))
     def test_simple(self, data):
         dtype1 = type(data)
         dtype2 = infer_type(data, itemize=False)
@@ -32,7 +32,7 @@ class TestInferTypes(unittest.TestCase):
         self.assertTrue(dtype1 is dtype2, '{0} {1}'.format(dtype1, dtype2))
 
     def test_list(self):
-        data = [5, True, 'hey', TestClass()]
+        data = [5, True, 'hey', TestClass(), None]
 
         # First test that, without itemization, we can infer the type
         dtype1 = type(data)
