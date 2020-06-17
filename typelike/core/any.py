@@ -36,6 +36,10 @@ class AnyLike(metaclass=ABCMeta):
     def __len__(self):
         raise NotImplementedError
 
+    # Needed to trick PyCharm
+    def __mul__(self, other):
+        raise NotImplementedError
+
     # Register subclass as ArrayLike
     @classmethod
     def register(cls, subclass):
